@@ -1,0 +1,66 @@
+CREATE TABLE emp (ID integer,NAME varchar(20),AGE integer,SALARY integer);
+INSERT INTO emp VALUES (1, 'Arun', 20,45000);
+INSERT INTO emp VALUES (2, 'arul', 31,50000);
+INSERT INTO emp VALUES (3, 'kumar', 42,60000);
+INSERT INTO emp VALUES (4, 'karthi', 25,70000);
+INSERT INTO emp VALUES (5, 'dinesh', 24,45000);
+INSERT INTO emp VALUES (6, 'babu', 25,50000);
+INSERT INTO emp VALUES (7, 'dilli', 26,60000);
+INSERT INTO emp VALUES (8, 'aswin', 29,70000);
+INSERT INTO emp VALUES (9, 'asvin', 28,60000);
+INSERT INTO emp VALUES (10,'abik', 40,70000);
+SELECT * FROM emp;
+ALTER TABLE emp ADD POSITION varchar(50);
+INSERT INTO emp VALUES (1, 'Arun', 20,45000,'Emp');
+INSERT INTO emp VALUES (2, 'arul', 31,50000,'T L');
+INSERT INTO emp VALUES (3, 'kumar', 42,60000,'P A');
+INSERT INTO emp VALUES (4, 'karthi', 25,70000,'HR');
+INSERT INTO emp VALUES (5, 'dinesh', 24,45000,'Emp');
+INSERT INTO emp VALUES (6, 'babu', 25,50000,'T L');
+INSERT INTO emp VALUES (7, 'dilli', 26,60000,'P A');
+INSERT INTO emp VALUES (8, 'aswin', 29,70000,'HR');
+INSERT INTO emp VALUES (9, 'asvin', 28,60000,'P A');
+INSERT INTO emp VALUES (10,'abik', 40,70000,'HR');
+SELECT * FROM emp;
+DELETE FROM emp where id=10;
+SELECT * FROM emp;
+SELECT * FROM emp where id between 2 and 5;
+SELECT * FROM emp;
+UPDATE emp SET ID=11 where Name='I';
+SELECT * FROM emp;
+SELECT * FROM emp where Name in('A','B','C');
+SELECT * from emp order by AGE desc;
+SELECT * from emp order by AGE ;
+SELECT COUNT(*)FROM emp where POSITION='HR';
+SELECT avg(AGE) from emp;
+SELECT sum(AGE) from emp;
+CREATE TABLE students(StuRN integer,StuNAME varchar(20),StuAGE integer);
+INSERT INTO students VALUES (1, 'dinesh', 17);
+INSERT INTO students VALUES (2, 'Babu', 21);
+INSERT INTO students VALUES (3, 'arul', 19);
+INSERT INTO students VALUES (4, 'kumar', 20);
+SELECT * FROM students;
+CREATE TABLE studentcourse(cid integer,rn integer);
+INSERT INTO studentcourse VALUES (1,1);
+INSERT INTO studentcourse VALUES (2,2);
+INSERT INTO studentcourse VALUES (3,3);
+INSERT INTO studentcourse VALUES (4,4);
+SELECT * FROM studentcourse;
+SELECT studentcourse.cid, students.StuNAME, students.StuAGE FROM students
+INNER JOIN studentcourse
+ON students.rn = studentcourse.rn;
+
+SELECT students.StuNAME,studentcourse.cid 
+FROM students
+LEFT JOIN studentcourse 
+ON studentcourse.rn = students.rn;
+
+SELECT students.StuNAME,studentcourse.cid 
+FROM students
+RIGHT JOIN studentcourse 
+ON studentcourse.rn = students.rn;
+
+SELECT students.StuNAME,studentcourse.cid 
+FROM students
+FULL JOIN studentcourse 
+ON studentcourse.rn = students.rn;
