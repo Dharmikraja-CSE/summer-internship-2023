@@ -1,0 +1,33 @@
+db.balooncollection.insertOne({Colour:"green"},{shape:"circle"},{Price:80},{key:1});
+{
+  acknowledged: true,
+  insertedId: ObjectId("6491bc0b72cdc31aa6ba9d05")
+}
+
+db.balooncollection.insertOne({Colour:"blue"},{shape:"circle"},{Price:75},{key:2});
+{
+  acknowledged: true,
+  insertedId: ObjectId("6491bc2e72cdc31aa6ba9d06")
+}
+db.balooncollection.insertOne({Colour:"red"},{shape:"Oval"},{Price:20},{key:3});
+{
+  acknowledged: true,
+  insertedId: ObjectId("6491bc3d72cdc31aa6ba9d07")
+}
+db.balooncollection.insertOne({Colour:"pink"},{shape:"Circle"},{Price:40},{key:4});
+{
+  acknowledged: true,
+  insertedId: ObjectId("6491bc5872cdc31aa6ba9d08")
+}
+db.balooncollection.insertOne({Colour:"blue"},{shape:"oval"},{Price:90},{key:5});
+{
+  acknowledged: true,
+  insertedId: ObjectId("6491bc6872cdc31aa6ba9d09")
+}
+db.balooncollection.insertOne({Colour:"purple"},{shape:"Circle"},{Price:40},{key:6});
+{
+  acknowledged: true,
+  insertedId: ObjectId("6491bc7772cdc31aa6ba9d0a")
+}
+db.baloon.find()
+db.baloon.find().sort({key:1})
